@@ -1,0 +1,153 @@
+{
+  "enfermedades": [
+    {
+      "id": 1,
+      "nombre": "Araña Roja",
+      "nombre_cientifico": "Tetranychus urticae",
+      "tipo": "Plaga",
+      "sintomas": [
+        "Puntos amarillos en las hojas",
+        "Telarañas finas en envés de hojas",
+        "Marchitez general de la planta"
+      ],
+      "causa": "Ambiente seco y temperaturas cálidas favorecen su proliferación",
+      "tratamiento_eco": [
+        "Aumentar humedad pulverizando agua regularmente",
+        "Ducha suave con agua a presión",
+        "Aceite de neem: diluir 5ml en 1L agua, aplicar cada 7 días",
+        "Aislamiento de plantas infectadas"
+      ],
+      "prevención": "Mantener humedad ambiental, evitar plantas débiles",
+      "gravedad": "Alta",
+      "uso_enfermedades": [1, 2, 4]
+    },
+    {
+      "id": 2,
+      "nombre": "Cochinilla",
+      "nombre_cientifico": "Saissetia oleae",
+      "tipo": "Plaga",
+      "sintomas": [
+        "Depósitos blancos/marrones en tallos y hojas",
+        "Sustancia pegajosa (melaza) en hojas",
+        "Manchas negras por hongo de fumagina"
+      ],
+      "causa": "Falta de ventilación, ambiente muy seco o muy húmedo",
+      "tratamiento_eco": [
+        "Limpiar manualmente con alcohol y algodón",
+        "Jabón potásico: 1 cucharada por litro de agua",
+        "Aplicar cada 3-4 días durante 2-3 semanas",
+        "Diatameas de tierra: espolvorear alrededor"
+      ],
+      "prevención": "Inspección regular, buen flujo de aire",
+      "gravedad": "Alta",
+      "uso_enfermedades": [2]
+    },
+    {
+      "id": 3,
+      "nombre": "Oidio (Polvo Blanco)",
+      "nombre_cientifico": "Erysiphales",
+      "tipo": "Hongo",
+      "sintomas": [
+        "Polvo blanco harinoso en hojas",
+        "Deformación de hojas nuevas",
+        "Necrosis de tejidos"
+      ],
+      "causa": "Humedad alta + falta de ventilación + temperaturas moderadas",
+      "tratamiento_eco": [
+        "Mejorar ventilación",
+        "Polvo de azufre: aplicar 2 veces por semana",
+        "Bicarbonato: 1 cucharada en 1L agua + jabón",
+        "Neem en spray cada 5-7 días"
+      ],
+      "prevención": "Evitar mojado de hojas al regar, buena circulación",
+      "gravedad": "Media",
+      "uso_enfermedades": [3]
+    },
+    {
+      "id": 4,
+      "nombre": "Trips",
+      "nombre_cientifico": "Frankliniella occidentalis",
+      "tipo": "Plaga",
+      "sintomas": [
+        "Decoloración plateada en hojas",
+        "Manchas oscuras (heces)",
+        "Flores deformadas o dañadas"
+      ],
+      "causa": "Plantas débiles o estrés hídrico",
+      "tratamiento_eco": [
+        "Aceite de neem cada 5-7 días",
+        "Acaros depredadores (Phytoseiulus)",
+        "Trampas azules pegajosas",
+        "Aislamiento de plantas afectadas"
+      ],
+      "prevención": "Mantener plantas fuertes, inspección regular",
+      "gravedad": "Media",
+      "uso_enfermedades": [4]
+    },
+    {
+      "id": 5,
+      "nombre": "Pudrición de Raíces",
+      "nombre_cientifico": "Rhizoctonia, Pythium, Phytophthora",
+      "tipo": "Hongo",
+      "sintomas": [
+        "Marchitez sin causa aparente",
+        "Olor desagradable en sustrato",
+        "Raíces oscuras y blandas",
+        "Caída de hojas"
+      ],
+      "causa": "Riego excesivo, drenaje pobre, sustrato compactado",
+      "tratamiento_eco": [
+        "Reducir riego inmediatamente",
+        "Trasplantarla a sustrato nuevo y seco",
+        "Eliminar raíces enfermas con cuchillo limpio",
+        "Fungicida de cobre o azufre si es grave"
+      ],
+      "prevención": "Drenaje excelente, riego regulado, macetas con agujeros",
+      "gravedad": "Muy Alta",
+      "uso_enfermedades": [5, 8]
+    },
+    {
+      "id": 6,
+      "nombre": "Mancha Foliar",
+      "nombre_cientifico": "Leaf Spot (múltiples hongos)",
+      "tipo": "Hongo",
+      "sintomas": [
+        "Manchas redondeadas o irregulares en hojas",
+        "Bordes amarillentos o rojizos",
+        "Progresión hacia el centro de la hoja"
+      ],
+      "causa": "Mojado de follaje, humedad alta, falta de ventilación",
+      "tratamiento_eco": [
+        "Eliminar hojas afectadas",
+        "Evitar mojar follaje",
+        "Fungicida de cobre en spray",
+        "Mejorar ventilación"
+      ],
+      "prevención": "Regar en base de planta, no en follaje",
+      "gravedad": "Media",
+      "uso_enfermedades": [6, 8]
+    },
+    {
+      "id": 7,
+      "nombre": "Virus del Mosaico",
+      "nombre_cientifico": "Virus mosaico del tabaco (TMV)",
+      "tipo": "Virus",
+      "sintomas": [
+        "Manchas moteadas irregulares",
+        "Decoloración en patrón de mosaico",
+        "Crecimiento deformado",
+        "Enrollamiento de hojas"
+      ],
+      "causa": "Transmisión por insectos o herramientas contaminadas",
+      "tratamiento_eco": [
+        "No hay cura: requiere eliminación de planta",
+        "Desinfectar herramientas antes de usar",
+        "Aislar plantas infectadas",
+        "Eliminar completamente para evitar propagación"
+      ],
+      "prevención": "Higiene de herramientas, control de plagas",
+      "gravedad": "Muy Alta",
+      "uso_enfermedades": []
+    }
+  ]
+}

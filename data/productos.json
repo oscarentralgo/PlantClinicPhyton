@@ -1,0 +1,108 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Aceite de Neem 100% Orgánico",
+      "tipo": "Pesticida",
+      "precio": 12.99,
+      "stock": 45,
+      "descripcion": "Aceite de neem puro sin dilatar. Efectivo contra araña roja, cochinilla y trips.",
+      "dosis": "Diluir 5ml en 1L de agua, aplicar con pulverizador",
+      "uso_enfermedades": [1, 2, 4],
+      "marca": "EcoPlant",
+      "eco_score": 9.5,
+      "imagen": "https://via.placeholder.com/200x200?text=Neem"
+    },
+    {
+      "id": 2,
+      "nombre": "Jabón Potásico 500ml",
+      "tipo": "Pesticida",
+      "precio": 8.50,
+      "stock": 60,
+      "descripcion": "Jabón potásico natural. Perfecto para cochinillas y pulgones.",
+      "dosis": "1 cucharada por litro de agua",
+      "uso_enfermedades": [2],
+      "marca": "BioSolve",
+      "eco_score": 9.8,
+      "imagen": "https://via.placeholder.com/200x200?text=Jabon"
+    },
+    {
+      "id": 3,
+      "nombre": "Polvo de Azufre 500g",
+      "tipo": "Fungicida",
+      "precio": 6.99,
+      "stock": 75,
+      "descripcion": "Azufre micronizado para oidio y ácaros. Modo de acción por contacto.",
+      "dosis": "Espolvorear directamente en plantas afectadas",
+      "uso_enfermedades": [3],
+      "marca": "NaturalCare",
+      "eco_score": 9.0,
+      "imagen": "https://via.placeholder.com/200x200?text=Azufre"
+    },
+    {
+      "id": 4,
+      "nombre": "Bicarbonato de Sodio Agrícola 1kg",
+      "tipo": "Fungicida",
+      "precio": 5.50,
+      "stock": 100,
+      "descripcion": "Bicarbonato puro para prevención y tratamiento de oidio.",
+      "dosis": "1 cucharada en 1L agua + 1 cucharada jabón",
+      "uso_enfermedades": [3],
+      "marca": "AgriClean",
+      "eco_score": 10.0,
+      "imagen": "https://via.placeholder.com/200x200?text=Bicarbonato"
+    },
+    {
+      "id": 5,
+      "nombre": "Tierra para Macetas Orgánica 10L",
+      "tipo": "Sustrato",
+      "precio": 7.99,
+      "stock": 40,
+      "descripcion": "Mezcla de turba, fibra de coco y perlita. Excelente drenaje y aireación.",
+      "dosis": "Usar según necesidades de trasplante",
+      "uso_enfermedades": [5],
+      "marca": "GreenEarth",
+      "eco_score": 8.5,
+      "imagen": "https://via.placeholder.com/200x200?text=Tierra"
+    },
+    {
+      "id": 6,
+      "nombre": "Perlita de Horticultua 2L",
+      "tipo": "Sustrato",
+      "precio": 4.99,
+      "stock": 80,
+      "descripcion": "Perlita expandida para mejorar drenaje y aireación del sustrato.",
+      "dosis": "Mezclar 20-30% con tierra de macetas",
+      "uso_enfermedades": [5],
+      "marca": "TerraPro",
+      "eco_score": 8.0,
+      "imagen": "https://via.placeholder.com/200x200?text=Perlita"
+    },
+    {
+      "id": 7,
+      "nombre": "Trampas Azules Pegajosas x10",
+      "tipo": "Control",
+      "precio": 9.99,
+      "stock": 50,
+      "descripcion": "Trampas pegajosas para capturas de trips, moscas blancas y otros insectos.",
+      "dosis": "Colocar cerca de plantas vulnerables",
+      "uso_enfermedades": [4],
+      "marca": "BugCatcher",
+      "eco_score": 9.0,
+      "imagen": "https://via.placeholder.com/200x200?text=Trampas"
+    },
+    {
+      "id": 8,
+      "nombre": "Fungicida de Cobre 500ml",
+      "tipo": "Fungicida",
+      "precio": 11.50,
+      "stock": 35,
+      "descripcion": "Cobre en suspensión para mancha foliar y pudrición. Uso ecológico certificado.",
+      "dosis": "Diluir según instrucciones, aplicar en hojas",
+      "uso_enfermedades": [5, 6],
+      "marca": "CopperGuard",
+      "eco_score": 7.5,
+      "imagen": "https://via.placeholder.com/200x200?text=Cobre"
+    }
+  ]
+}
