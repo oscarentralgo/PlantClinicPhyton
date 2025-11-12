@@ -1,0 +1,27 @@
+<!-- templates/search_plants.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Planta | Plant Clinic</title>
+</head>
+<body>
+    <h1>Búsqueda de Plantas</h1>
+    <form method="POST">
+        <input type="text" name="busqueda" placeholder="Escribe el nombre o nombre científico" value="{{ query|default('') }}">
+        <button type="submit">Buscar</button>
+    </form>
+    {% if resultados is defined %}
+        <ul>
+            {% for planta in resultados %}
+                <li>
+                    <a href="/planta/{{ planta.id }}">{{ planta.nombre }} ({{ planta.nombre_cientifico }})</a>
+                </li>
+            {% else %}
+                <li>No se encontraron plantas 🚫</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <p><a href="/">Volver al inicio</a></p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos | Plant Clinic</title>
+</head>
+<body>
+    <h1>Catálogo de Productos Eco-Friendly</h1>
+    <ul>
+    {% for producto in productos %}
+        <li>
+            <a href="/producto/{{ producto.id }}">{{ producto.nombre }}</a>
+            ({{ producto.tipo }}, {{ producto.precio }}€)
+        </li>
+    {% endfor %}
+    </ul>
+    <p><a href="/">Volver al inicio</a></p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Enfermedades | Plant Clinic</title>
+</head>
+<body>
+    <h1>Lista de Enfermedades</h1>
+    <ul>
+    {% for enfermedad in enfermedades %}
+        <li>
+            <a href="/enfermedad/{{ enfermedad.id }}">{{ enfermedad.nombre }}</a>
+            ({{ enfermedad.tipo }})
+        </li>
+    {% endfor %}
+    </ul>
+    <p><a href="/">Volver al inicio</a></p>
+</body>
+</html>

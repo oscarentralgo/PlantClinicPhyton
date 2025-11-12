@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ producto.nombre }} | Detalle</title>
+</head>
+<body>
+    <h1>{{ producto.nombre }}</h1>
+    <img src="{{ producto.imagen }}" alt="{{ producto.nombre }}">
+    <p><b>Tipo:</b> {{ producto.tipo }} | <b>Marca:</b> {{ producto.marca }}</p>
+    <p><b>Descripción:</b> {{ producto.descripcion }}</p>
+    <p><b>Dosis:</b> {{ producto.dosis }}</p>
+    <p><b>Precio:</b> {{ producto.precio }}€</p>
+    <h3>Enfermedades tratadas</h3>
+    <ul>
+    {% for enfermedad in enfermedades %}
+        <li><a href="/enfermedad/{{ enfermedad.id }}">{{ enfermedad.nombre }}</a></li>
+    {% endfor %}
+    </ul>
+    <form action="/carrito/agregar/{{ producto.id }}" method="post">
+        <input type="number" name="cantidad" value="1" min="1">
+        <button type="submit">Añadir al carrito</button>
+    </form>
+    <p><a href="/productos">Catálogo</a> | <a href="/">Inicio</a></p>
+</body>
+</html>

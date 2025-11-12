@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ enfermedad.nombre }} | Detalle</title>
+</head>
+<body>
+    <h1>{{ enfermedad.nombre }}</h1>
+    <p><b>Tipo:</b> {{ enfermedad.tipo }}</p>
+    <p><b>Nombre científico:</b> {{ enfermedad.nombre_cientifico }}</p>
+    <p><b>Síntomas:</b>
+        <ul>
+        {% for sintoma in enfermedad.sintomas %}
+            <li>{{ sintoma }}</li>
+        {% endfor %}
+        </ul>
+    </p>
+    <p><b>Causa:</b> {{ enfermedad.causa }}</p>
+    <p><b>Tratamiento ecológico:</b>
+        <ul>
+        {% for t in enfermedad.tratamiento_eco %}
+            <li>{{ t }}</li>
+        {% endfor %}
+        </ul>
+    </p>
+    <p><b>Prevención:</b> {{ enfermedad.prevención }}</p>
+    <p><b>Gravedad:</b> {{ enfermedad.gravedad }}</p>
+    <h3>Productos recomendados</h3>
+    <ul>
+    {% for producto in productos %}
+        <li><a href="/producto/{{ producto.id }}">{{ producto.nombre }}</a></li>
+    {% endfor %}
+    </ul>
+    <p><a href="/enfermedades">Ver todas las enfermedades</a> | <a href="/">Inicio</a></p>
+</body>
+</html>

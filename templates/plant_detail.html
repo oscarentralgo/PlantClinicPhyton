@@ -1,0 +1,35 @@
+<!-- templates/plant_detail.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ planta.nombre }} | Detalle</title>
+</head>
+<body>
+    <h1>{{ planta.nombre }}</h1>
+    <img src="{{ planta.imagen }}" alt="{{ planta.nombre }}">
+    <p><em>{{ planta.nombre_cientifico }} ({{ planta.familia }})</em></p>
+    <p>{{ planta.descripcion }}</p>
+    <h2>Cuidados</h2>
+    <ul>
+        <li>Luz: {{ planta.cuidados.luz }}</li>
+        <li>Riego: {{ planta.cuidados.riego }}</li>
+        <li>Temperatura: {{ planta.cuidados.temperatura }}</li>
+        <li>Humedad: {{ planta.cuidados.humedad }}</li>
+        <li>Sustrato: {{ planta.cuidados.sustrato }}</li>
+    </ul>
+    <h3>Enfermedades comunes</h3>
+    <ul>
+    {% for enfermedad in enfermedades %}
+        <li><a href="/enfermedad/{{ enfermedad.id }}">{{ enfermedad.nombre }}</a></li>
+    {% endfor %}
+    </ul>
+    <h3>Productos recomendados</h3>
+    <ul>
+    {% for producto in productos %}
+        <li><a href="/producto/{{ producto.id }}">{{ producto.nombre }}</a></li>
+    {% endfor %}
+    </ul>
+    <p><a href="/buscar-planta">Volver a búsqueda</a> | <a href="/">Inicio</a></p>
+</body>
+</html>

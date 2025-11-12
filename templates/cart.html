@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito | Plant Clinic</title>
+</head>
+<body>
+    <h1>Carrito de compras</h1>
+    {% if items %}
+        <ul>
+        {% for item in items %}
+            <li>{{ item.producto.nombre }} x{{ item.cantidad }} = {{ item.subtotal }}€</li>
+        {% endfor %}
+        </ul>
+        <strong>Total: {{ total }}€</strong>
+        <form action="/carrito/vaciar">
+            <button type="submit">Vaciar carrito</button>
+        </form>
+    {% else %}
+        <p>Tu carrito está vacío.</p>
+    {% endif %}
+    <p><a href="/productos">Volver al catálogo</a> | <a href="/">Inicio</a></p>
+</body>
+</html>
