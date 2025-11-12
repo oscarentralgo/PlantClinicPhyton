@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Diagnósticos - PlantClinic</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f8f8f8; padding: 50px;}
+        .container { max-width: 800px; margin: auto; background: white; border-radius: 8px; box-shadow: 0 0 22px #ccc; padding: 30px;}
+        h1 { color: #20602f; }
+        .diagnostico-item { margin: 20px 0; padding: 20px; background: #f9f9f9; border-left: 5px solid #20602f; }
+        .diagnostico-item h3 { color: #20602f; margin: 0 0 10px 0; }
+        .diagnostico-item p { margin: 5px 0; color: #555; }
+        .label { font-weight: bold; color: #20602f; }
+        a { color: #20602f; text-decoration: none; margin-top: 20px; display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diagnósticos de Enfermedades Comunes</h1>
+        <p>Aquí encontrarás información sobre enfermedades y plagas frecuentes en plantas.</p>
+        {% for diag in diagnosticos %}
+            <div class="diagnostico-item">
+                <h3>{{ diag.enfermedad }}</h3>
+                <p><span class="label">Síntomas:</span> {{ diag.síntomas }}</p>
+                <p><span class="label">Causa:</span> {{ diag.causa }}</p>
+                <p><span class="label">Tratamiento:</span> {{ diag.tratamiento }}</p>
+            </div>
+        {% endfor %}
+        <a href="/">Volver al diagnóstico</a>
+    </div>
+</body>
+</html>
