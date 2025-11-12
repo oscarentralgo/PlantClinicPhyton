@@ -1,37 +1,43 @@
-from flask import Flask, render_template, request
-from faq import obtener_faqs
-from diagnósticos import obtener_diagnosticos
-from consejos import obtener_consejos
+from flask import Flask, render_template
+import json
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET", "POST"])
-def home():
-    result = None
-    if request.method == "POST":
-        user_prompt = request.form["prompt"]
-        result = f"Simulación: Diagnóstico para '{user_prompt}' generado por IA."
-    return render_template("index.html", result=result)
+# Cargar datos
+def cargar_datos(archivo):
+    with open(f'data/{archivo}', 'r', encoding='utf-8') as f:
+        return json.load(f)
 
-@app.route("/faq")
-def faq():
-    faqs = obtener_faqs()
-    return render_template("faq.html", faqs=faqs)
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-@app.route("/diagnosticos")
+@app.route('/diagnosticos')
 def diagnosticos():
-    diags = obtener_diagnosticos()
-    return render_template("diagnósticos.html", diagnosticos=diags)
+    enfermedades = cargar_datos('enfermedades.json')
+    return render_template('diagnosticos.html', enfermedades=enfermedades)
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
+@app.route('/enfermedades')
+def enfermedades():
+    enfermedades_data = cargar_datos('enfermedades.json')
+    return render_template('diseases.html', enfermedades=enfermedades_data)
 
-@app.route("/consejos")
+@app.route('/productos')
+def productos():
+    productos_data = cargar_datos('productos.json')
+    return render_template('products.html', productos=productos_data)
+
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
+@app.route('/consejos')
 def consejos():
-    cons = obtener_consejos()
-    return render_template("consejos.html", consejos=cons)
+    return render_template('consejos.html')
 
-if __name__ == "__main__":
+@app.route('/sobre-nosotros')
+def sobre_nosotros():
+    return render_template('about.html')
+
+if __name__ == '__main__':
     app.run(debug=True)
-
