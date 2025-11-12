@@ -1,43 +1,127 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8"/>
-    <title>PlantClinic - Diagnóstico IA de Plantas</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f8f8f8; padding: 50px;}
-        .container { max-width: 600px; margin: auto; background: white; border-radius: 8px; box-shadow: 0 0 22px #ccc; padding: 30px;}
-        h1 { color: #20602f; }
-        textarea, button { margin-top: 15px; width: 100%; padding: 10px; box-sizing: border-box; }
-        button { background: #20602f; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
-        button:hover { background: #144a1f; }
-        .respuesta { margin: 30px 0; padding: 15px; background: #e2f6e8; border-left: 5px solid #20602f; }
-        .nav { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; }
-        .nav a { flex: 1; padding: 10px; text-align: center; background: #20602f; color: white; text-decoration: none; border-radius: 4px; font-size: 14px; }
-        .nav a:hover { background: #144a1f; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>PlantClinic</h1>
-        <p>Describe el problema de tu planta y obtén diagnóstico con IA:</p>
-        <form method="post">
-            <textarea name="prompt" rows="5" placeholder="Ejemplo: Mi tomatera tiene manchas blancas y las hojas dobladas..."></textarea>
-            <button type="submit">Consultar IA</button>
-        </form>
-        {% if result %}
-            <div class="respuesta">
-                <b>Diagnóstico IA:</b>
-                <p>{{ result }}</p>
+{% extends "base.html" %}
+
+{% block title %}Inicio - Plant Clinic{% endblock %}
+
+{% block content %}
+    <!-- HERO SECTION -->
+    <div class="hero-section text-center">
+        <h1><i class="fas fa-leaf"></i> Bienvenido a PlantClinic</h1>
+        <p>Diagnóstica y trata enfermedades de plantas con inteligencia artificial</p>
+    </div>
+
+    <!-- FORMULARIO CONSULTA IA -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-robot"></i> Consulta con IA</h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">Describe el problema de tu planta y obtén un diagnóstico inteligente:</p>
+                    <form method="post" action="/">
+                        <div class="mb-3">
+                            <textarea class="form-control" name="consulta" rows="4" placeholder="Ejemplo: Mi tomatera tiene las hojas amarillas y marchitas..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success-custom w-100 fw-bold">
+                            <i class="fas fa-wand-magic-sparkles"></i> Consultar IA
+                        </button>
+                    </form>
+
+                    <!-- RESULTADO IA -->
+                    {% if diagnostico %}
+                    <div class="alert alert-success mt-4" role="alert">
+                        <h5><i class="fas fa-check-circle"></i> Diagnóstico IA:</h5>
+                        <p class="mb-0">{{ diagnostico }}</p>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
-        {% endif %}
-        <div class="nav">
-            <a href="/diagnosticos">📋 Diagnósticos</a>
-            <a href="/faq">❓ FAQ</a>
-            <a href="/consejos">💡 Consejos</a>
-            <a href="/about">ℹ️ Sobre Nosotros</a>
         </div>
     </div>
-</body>
-</html>
+
+    <!-- SECCIONES PRINCIPALES -->
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <i class="fas fa-stethoscope" style="font-size: 2.5rem; color: var(--green-light);"></i>
+                    <h5 class="card-title mt-3">Diagnósticos</h5>
+                    <p class="card-text text-muted">Identifica enfermedades comunes en plantas</p>
+                    <a href="/diagnosticos" class="btn btn-sm btn-success-custom">Ir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <i class="fas fa-question-circle" style="font-size: 2.5rem; color: var(--green-light);"></i>
+                    <h5 class="card-title mt-3">Preguntas Frecuentes</h5>
+                    <p class="card-text text-muted">Resuelve tus dudas sobre PlantClinic</p>
+                    <a href="/faq" class="btn btn-sm btn-success-custom">Ir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <i class="fas fa-lightbulb" style="font-size: 2.5rem; color: var(--green-light);"></i>
+                    <h5 class="card-title mt-3">Consejos</h5>
+                    <p class="card-text text-muted">Aprende a cuidar mejor tus plantas</p>
+                    <a href="/consejos" class="btn btn-sm btn-success-custom">Ir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <i class="fas fa-info-circle" style="font-size: 2.5rem; color: var(--green-light);"></i>
+                    <h5 class="card-title mt-3">Sobre Nosotros</h5>
+                    <p class="card-text text-muted">Conoce nuestra misión y valores</p>
+                    <a href="/sobre-nosotros" class="btn btn-sm btn-success-custom">Ir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE BENEFICIOS -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2 class="text-center mb-5"><i class="fas fa-star"></i> ¿Por qué elegir PlantClinic?</h2>
+            <div class="row">
+                <div class="col-md-3 text-center mb-4">
+                    <div style="font-size: 3rem; color: var(--green-light); margin-bottom: 1rem;">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h5>Gratis</h5>
+                    <p class="text-muted">Sin costo ni suscripción. 100% gratuito.</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div style="font-size: 3rem; color: var(--green-light); margin-bottom: 1rem;">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h5>Rápido</h5>
+                    <p class="text-muted">Diagnósticos inmediatos en segundos.</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div style="font-size: 3rem; color: var(--green-light); margin-bottom: 1rem;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5>Confiable</h5>
+                    <p class="text-muted">Información basada en conocimiento botánico.</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div style="font-size: 3rem; color: var(--green-light); margin-bottom: 1rem;">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h5>Fácil</h5>
+                    <p class="text-muted">Interfaz sencilla y amigable para todos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
 

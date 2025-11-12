@@ -1,0 +1,107 @@
+:root {
+    --green-primary: #2d5a3d;
+    --green-light: #4a8f63;
+    --green-lighter: #e8f5e9;
+    --text-dark: #1b3a1b;
+}
+
+/* Navbar personalizada */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Botones personalizados */
+.btn-success-custom {
+    background-color: var(--green-light);
+    border-color: var(--green-light);
+    color: white;
+}
+
+.btn-success-custom:hover {
+    background-color: var(--green-primary);
+    border-color: var(--green-primary);
+    color: white;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--green-light);
+}
+
+.card-header {
+    background-color: var(--green-lighter);
+    border-bottom: 2px solid var(--green-light);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* Alertas */
+.alert-success {
+    background-color: var(--green-lighter);
+    border-color: var(--green-light);
+    color: var(--text-dark);
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* Formularios */
+.form-control:focus {
+    border-color: var(--green-light);
+    box-shadow: 0 0 0 0.2rem rgba(74, 143, 99, 0.25);
+}
+
+.form-control {
+    border-color: #ddd;
+}
+
+/* Footer */
+footer a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: white !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Estilos para home hero */
+.hero-section {
+    background: linear-gradient(135deg, var(--green-primary), var(--green-light));
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
